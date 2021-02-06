@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, Text, StyleSheet, View, FlatList, Image, Dimensions, TouchableOpacity } from 'react-native'
+import ResponsiveText from '../Components/ResponsiveText'
 
 
 const CardHome = (props) => {
@@ -14,12 +15,10 @@ const CardHome = (props) => {
                 source={require('../Assets/chars/spider-man.png')}
                 resizeMode={'stretch'}
             />
-            <Text style={styles.realName}>
-                {realName}
-            </Text>
-            <Text style={styles.name}>
-                {name}
-            </Text>
+            <View style={styles.text}>
+                <ResponsiveText p title={realName} style={{ color: "#fff" }}></ResponsiveText >
+                <ResponsiveText h4 title={name} style={{ color: "#fff", fontWeight: 'bold' }}></ResponsiveText >
+            </View>
         </View>
     </TouchableOpacity>)
 }
@@ -38,21 +37,12 @@ const styles = StyleSheet.create({
         top:0,
         left:0
     },
-    realName:{
+    text:{
         position: 'absolute',
-        top:'63%',
+        bottom:'5%',
         left:5,
-        zIndex: 1,
-        fontSize: 12,
-        color: '#fff'
-    },
-    name:{
-        position: 'absolute',
-        top:'70%',
-        left:5,
-        zIndex: 1,
-        fontSize: 20,
-        color: '#fff'
+        color: '#fff',
+        fontFamily: 'gilroy-regular'
     }
   })
 
