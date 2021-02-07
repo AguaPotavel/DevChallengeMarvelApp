@@ -8,31 +8,30 @@ const CardHome = (props) => {
     const realName = props.realName
     const imagePath = props.image
     return(
-    <TouchableOpacity>
         <View style={styles.card}>
+            <View style={{position:'absolute', top:0, left:0, bottom:0, right:0, backgroundColor:'black', zIndex: 1, opacity:0.25, borderRadius:15}}></View>
             <Image
                 style={styles.cover}
-                source={require('../Assets/chars/spider-man.png')}
+                source={imagePath}
                 resizeMode={'stretch'}
             />
             <View style={styles.text}>
                 <ResponsiveText p title={realName} style={{ color: "#fff" }}></ResponsiveText >
-                <ResponsiveText h4 title={name} style={{ color: "#fff", fontWeight: 'bold' }}></ResponsiveText >
+                <ResponsiveText h4 title={name} style={{ color: "#fff", fontWeight: 'bold', fontFamily:'gilroy-heavy'}}></ResponsiveText >
             </View>
-        </View>
-    </TouchableOpacity>)
+        </View>)
 }
 
 const styles = StyleSheet.create({
     card:{
         borderRadius: 5,
-        width: 100,
-        height: 200
+        width: 150,
+        height: 225
     },
     cover:{
         borderRadius: 15,
-        height: 200,
-        width:125,
+        height: 225,
+        width:150,
         position: 'absolute',
         top:0,
         left:0
@@ -40,9 +39,9 @@ const styles = StyleSheet.create({
     text:{
         position: 'absolute',
         bottom:'5%',
-        left:5,
+        left:6,
         color: '#fff',
-        fontFamily: 'gilroy-regular'
+        zIndex: 2
     }
   })
 
